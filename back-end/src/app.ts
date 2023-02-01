@@ -1,6 +1,6 @@
 import express, { NextFunction, Request, Response } from "express";
 import { AppError } from "./errors/appError";
-import userRouter from "./router/users.routes";
+import userRouter from "./router/userRoutes/users.routes";
 const app = express();
 
 app.use(express.json());
