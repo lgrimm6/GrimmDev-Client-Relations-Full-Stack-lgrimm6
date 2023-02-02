@@ -4,6 +4,7 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   OneToMany,
+  JoinColumn,
 } from "typeorm";
 import { Exclude } from "class-transformer";
 import { Contact } from "./contact.entity";
@@ -32,6 +33,7 @@ export class User {
   @OneToMany((type) => Contact, (contact) => contact.user, {
     eager: true,
   })
+  @JoinColumn()
   contact: Contact[];
   @CreateDateColumn()
   createdAt: Date;
