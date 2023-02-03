@@ -26,6 +26,5 @@ export class Contact {
   createdAt: Date;
 
   @ManyToOne((type) => User, (user) => user.contact)
-  @JoinColumn()
   user: User;
 }
