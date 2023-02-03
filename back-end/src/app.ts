@@ -1,5 +1,7 @@
-import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
+import "reflect-metadata";
+
+import express, { NextFunction, Request, Response } from "express";
 import { AppError } from "./errors/appError";
 import userRouter from "./router/userRoutes/users.routes";
 import contactRouter from "./router/contactRoutes/contact.routes";
