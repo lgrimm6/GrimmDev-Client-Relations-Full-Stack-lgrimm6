@@ -6,7 +6,7 @@ const createContactController = async (req: Request, res: Response) => {
   const contactData = req.body;
   const contactCreated = await createContactServices(userId, contactData);
 
-  return res.json({ contactData });
+  return res.status(201).json({ msg: "contact successfully added" });
 };
 
 export default createContactController;
