@@ -6,7 +6,7 @@ import {
   ManyToOne,
   JoinColumn,
 } from "typeorm";
-import { User } from "./user.entity";
+import { Client } from "./client.entity";
 
 @Entity("contact")
 export class Contact {
@@ -25,6 +25,8 @@ export class Contact {
   @CreateDateColumn()
   createdAt: Date;
 
-  @ManyToOne((type) => User, (user) => user.contact)
-  user: User;
+  @ManyToOne((type) => Client, (client) => client.contact, {
+    onDelete: "CASCADE",
+  })
+  client: Client;
 }
