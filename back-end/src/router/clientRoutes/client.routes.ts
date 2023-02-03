@@ -10,19 +10,19 @@ const router = Router();
 
 router.post("", createClientController);
 router.get(
-  "/:uuid",
+  "/:clientId",
   verifyIdParams,
   verifyAuthTokenMiddleware,
   listClientController
 );
 router.patch(
-  "/:uuid",
+  "/:clientId",
   verifyIdParams,
   verifyAuthTokenMiddleware,
   updateClientController
 );
 router.delete(
-  "/:uuid",
+  "/:clientId",
   verifyIdParams,
   verifyAuthTokenMiddleware,
   deleteClientController
