@@ -3,13 +3,13 @@ import { Repository } from "typeorm";
 import AppDataSource from "../../data-source";
 import { Client } from "../../entities/client.entity";
 import { AppError } from "../../errors/appError";
-import { IUserLogin } from "../../interfaces/login";
+import { IClientLogin } from "../../interfaces/login";
 import jwt from "jsonwebtoken";
 
 const loginServices = async ({
   username,
   password,
-}: IUserLogin): Promise<string> => {
+}: IClientLogin): Promise<string> => {
   const clientRepository: Repository<Client> =
     AppDataSource.getRepository(Client);
   const client: Client | null = await clientRepository.findOneBy({ username });
