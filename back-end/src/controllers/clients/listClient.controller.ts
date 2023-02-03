@@ -7,8 +7,8 @@ const listClientController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const uuid: string = req.params.uuid;
-  const client: Client = await listClientServices(uuid);
+  const clientId: string = req.params.clientId;
+  const client: Client = await listClientServices(clientId);
   return res.json(instanceToPlain(client));
 };
 
