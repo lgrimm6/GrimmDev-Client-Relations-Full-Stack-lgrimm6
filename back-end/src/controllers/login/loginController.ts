@@ -1,12 +1,10 @@
 import { Request, Response } from "express";
-import { IUserLogin } from "../../interfaces/login";
+import { IClientLogin } from "../../interfaces/login";
 import loginServices from "../../services/login/login.services";
 
 const loginController = async (req: Request, res: Response) => {
-  const user: IUserLogin = req.body;
-  console.log(user);
-
-  const token: string = await loginServices(user);
+  const client: IClientLogin = req.body;
+  const token: string = await loginServices(client);
   return res.json({ token });
 };
 
