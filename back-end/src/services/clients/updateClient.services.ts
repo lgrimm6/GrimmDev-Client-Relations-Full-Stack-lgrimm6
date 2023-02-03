@@ -5,17 +5,19 @@ import { AppError } from "../../errors/appError";
 import { IClientUpdate } from "../../interfaces/clients";
 
 const updateClientServices = async (
-  uuid: string,
+  clientId: string,
   updateData: IClientUpdate
 ): Promise<Client> => {
   const clientRepository: Repository<Client> =
     AppDataSource.getRepository(Client);
-  const client: Client | null = await clientRepository.findOneBy({ id: uuid });
+  const client: Client | null = await clientRepository.findOneBy({
+    id: clientId,
+  });
   if (!client) {
     throw new AppError(404, "Client does not exist");
   }
-  await clientRepository.update({ id: uuid }, { ...updateData });
-  const clientUpdated = await clientRepository.findOneBy({ id: uuid });
+  await clientRepository.update({ id: clientId }, { ...updateData });
+  const clientUpdated = await clientRepository.findOneBy({ id: clientId });
   return clientUpdated!;
 };
 
