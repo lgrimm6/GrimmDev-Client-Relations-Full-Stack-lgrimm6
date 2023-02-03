@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import deleteUserServices from "../../services/clients/deleteClient.Services";
+import deleteClientServices from "../../services/clients/deleteClient.Services";
 
-const deleteUserController = async (
+const deleteClientController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const uuid: string = req.params.uuid;
-  await deleteUserServices(uuid);
-  return res.status(204).json({ msg: "Deleted user" });
+  const clientId: string = req.params.clientId;
+  await deleteClientServices(clientId);
+  return res.status(204).json({ msg: "Deleted client" });
 };
 
-export default deleteUserController;
+export default deleteClientController;
