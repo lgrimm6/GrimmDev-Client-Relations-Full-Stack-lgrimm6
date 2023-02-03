@@ -28,5 +28,6 @@ export class Contact {
   @ManyToOne((type) => Client, (client) => client.contact, {
     onDelete: "CASCADE",
   })
+  @JoinColumn()
   client: Client;
 }
