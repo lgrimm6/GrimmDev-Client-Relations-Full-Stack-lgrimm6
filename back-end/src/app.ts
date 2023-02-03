@@ -10,9 +10,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/clients", clientRouter);
 app.use("/clients/login", loginRouter);
-app.use("/clients/contact", contactRouter);
+app.use("/clients", clientRouter);
+app.use("/clients", contactRouter);
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {
