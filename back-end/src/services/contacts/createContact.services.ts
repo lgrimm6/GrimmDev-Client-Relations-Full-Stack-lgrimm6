@@ -17,7 +17,7 @@ const createContactServices = async (
     id: clientId,
   });
   if (!client) {
-    throw new AppError(404, "user ID not found");
+    throw new AppError(404, "Client ID not found");
   }
   const newContact = new Contact();
   newContact.name = name;
