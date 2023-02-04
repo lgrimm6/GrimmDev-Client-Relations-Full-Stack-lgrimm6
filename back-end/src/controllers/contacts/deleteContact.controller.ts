@@ -7,7 +7,6 @@ const deletedContactController = async (
 ): Promise<Response> => {
   const clientId: string = req.user.id;
   const contactId: string = req.params.contactId;
-  console.log(clientId, contactId);
 
   await deleteContactServices(clientId, contactId);
   return res.status(200).json({ msg: "contact deleted" });
