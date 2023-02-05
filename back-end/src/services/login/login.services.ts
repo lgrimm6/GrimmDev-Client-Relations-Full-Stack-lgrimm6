@@ -9,7 +9,7 @@ import jwt from "jsonwebtoken";
 const loginServices = async ({
   username,
   password,
-}: IClientLogin): Promise<string> => {
+}: IClientLogin): Promise<{ token: string; client: Client }> => {
   const clientRepository: Repository<Client> =
     AppDataSource.getRepository(Client);
   const client: Client | null = await clientRepository.findOneBy({ username });
@@ -27,7 +27,7 @@ const loginServices = async ({
     process.env.SECRET_KEY as string,
     { expiresIn: "24h", subject: client.id }
   );
-  return token;
+  return { token, client };
 };
 
 export default loginServices;
