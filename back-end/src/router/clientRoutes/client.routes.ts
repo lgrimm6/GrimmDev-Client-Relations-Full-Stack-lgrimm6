@@ -3,6 +3,7 @@ import createClientController from "../../controllers/clients/createClient.contr
 import deleteClientController from "../../controllers/clients/deleteClient.controller";
 import listClientController from "../../controllers/clients/listClient.controller";
 import updateClientController from "../../controllers/clients/updateClient.controller";
+import generatePdfController from "../../controllers/pdf/generatePdf.controller";
 import verifyAuthTokenMiddleware from "../../middlewares/verifyAuthToken.middlewares";
 import verifyIdParams from "../../middlewares/verifyIdParams.middlewares";
 
@@ -27,5 +28,7 @@ router.delete(
   verifyAuthTokenMiddleware,
   deleteClientController
 );
+
+router.get("/generate/pdf", verifyAuthTokenMiddleware, generatePdfController);
 
 export default router;
