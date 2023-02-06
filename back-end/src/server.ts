@@ -9,6 +9,6 @@ import AppDataSource from "./data-source";
   });
 
   app.listen(process.env.PORT_API, () => {
-    console.log("Server runnig ...");
+    console.log(`Server runnig port ${process.env.PORT_API} ...`);
   });
 })();
