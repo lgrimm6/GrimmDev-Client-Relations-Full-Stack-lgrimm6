@@ -1,16 +1,18 @@
 import "express-async-errors";
 import "reflect-metadata";
+import cors from "cors";
 
 import express, { NextFunction, Request, Response } from "express";
 import { AppError } from "./errors/appError";
 import clientRouter from "./router/clientRoutes/client.routes";
 import contactRouter from "./router/contactRoutes/contact.routes";
 import loginRouter from "./router/login/login.routes";
+
 const app = express();
-
 app.use(express.json());
+app.use(cors());
 
-app.use("/clients/login", loginRouter);
+app.use("/clients", loginRouter);
 app.use("/clients", clientRouter);
 app.use("/clients", contactRouter);
 
