@@ -9,9 +9,7 @@ const createContactController = async (req: Request, res: Response) => {
     contactData
   );
 
-  return res
-    .status(201)
-    .json({ msg: "contact successfully added", contactCreated });
+  return res.status(201).json(contactCreated);
 };
 
 export default createContactController;

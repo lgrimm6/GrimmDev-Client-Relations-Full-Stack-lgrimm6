@@ -27,7 +27,12 @@ const createContactServices = async (
 
   contactRepository.create(newContact);
   await contactRepository.save(newContact);
-  return newContact;
+
+  const contact: Contact | null = await contactRepository.findOneBy({
+    id: newContact.id,
+  });
+
+  return contact!;
 };
 
 export default createContactServices;
