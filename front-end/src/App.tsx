@@ -1,16 +1,13 @@
-import "./App.css";
-import FormLogin from "./components/Forms/FormLogin";
-import Header from "./components/Header";
+import AuthProvider from "./contexts/AuthContexts";
+import RoutesMain from "./routes";
+import Global from "./style/global";
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <main>
-        <FormLogin></FormLogin>
-      </main>
-      <footer>Grimm Dev </footer>
-    </div>
+    <AuthProvider>
+      <Global />
+      <RoutesMain></RoutesMain>
+    </AuthProvider>
   );
 }
 
