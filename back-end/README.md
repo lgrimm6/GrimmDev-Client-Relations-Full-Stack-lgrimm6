@@ -17,7 +17,7 @@ configure um arquivo .env baseaso nas variaveis disponiveis no .env.example
 ### Migrações
 
 para dar início às migrations do projeto precisamos usar a CLI do typeorm seguindo os comandos abaixo:
-
+\*\*caso exista alguma migration, apague
 \*\*verifque se o AppDataSource está configurado da seguinte forma:
 
         const AppDataSource = new DataSource({
