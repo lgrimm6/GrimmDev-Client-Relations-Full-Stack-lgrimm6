@@ -6,12 +6,13 @@ import { IContact } from "../../contexts/interfaces";
 import ContainerDashboardPage from "./style";
 import EditProfile from "../../components/Modal/EditProfile";
 import Modal from "../../components/Modal/ModalBody";
-import { FaUserEdit } from "react-icons/Fa";
-import { GrDocumentPdf } from "react-icons/Gr";
-import { RiDeleteBin6Line } from "react-icons/Ri";
+import { FaUserEdit } from "react-icons/fa";
+import { GrDocumentPdf } from "react-icons/gr";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import api from "../../services";
 import EditContact from "../../components/Modal/EditContact";
 import AddContact from "../../components/Modal/AddContact";
+
 const DashboardPage = () => {
   const navigate = useNavigate();
   const {
